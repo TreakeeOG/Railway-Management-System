@@ -37,11 +37,9 @@ def book_ticket():
         )
 
         con.commit()
-        messagebox.showinfo("Success", "Ticket Booked Successfully")
         print("Ticket Booked Successfully")
 
     except Exception as e:
-        messagebox.showerror("Error", f"Error booking ticket: {e}")
         print(f"Error {e}")
 
     finally:
@@ -125,3 +123,5 @@ def cancel_ticket():
     finally:
         input("Press Enter to continue...")
         con.close()
+
+book_ticket()
