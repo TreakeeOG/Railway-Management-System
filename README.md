@@ -53,13 +53,6 @@ This project is designed as a **Class XII CBSE Informatics Practices Practical P
 
 ---
 
-### 📊 **Graphical Analysis**
-Displayed using **Matplotlib**:
-- Booking Fare Analysis  
-- Cancellation Refund Analysis  
-
----
-
 ## 🖥 **Screenshots (UI Previews)**
 <img width="196.5" height="426" alt="Welcome Page" src="https://github.com/user-attachments/assets/ca9bfc74-29d6-4183-afdf-988f0acf13d2" />
 <img width="196.5" height="426" alt="Register" src="https://github.com/user-attachments/assets/f7555ef0-3e30-41bb-ac0f-ab61c1dac346" />
@@ -72,5 +65,6 @@ Displayed using **Matplotlib**:
 - [@TreakeeOG](https://www.github.com/TreakeeOG)
 
 - [@BOxmAN0911](https://www.github.com/BOxmAN0911)
+
 
 
