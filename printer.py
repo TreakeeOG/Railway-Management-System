@@ -1,4 +1,4 @@
-def export_table_to_txt_user():
+def export_table_to_txt_passenger():
     import mysql.connector
     import os
     from db import get_connection
@@ -10,7 +10,7 @@ def export_table_to_txt_user():
     cursor = con.cursor()
 
     # ---------- FETCH DATA ----------
-    cursor.execute("SELECT * FROM USER")
+    cursor.execute("SELECT * FROM PASSENGER")
     rows = cursor.fetchall()
     headers = [col[0] for col in cursor.description]
 
@@ -26,7 +26,7 @@ def export_table_to_txt_user():
         col_widths.append(max_len + 2)  # padding
 
     # ---------- WRITE FORMATTED TEXT ----------
-    txt_file = "table_data_user.txt"
+    txt_file = "table_data_pasenger.txt"
     with open(txt_file, "w", encoding="utf-8") as f:
 
         # Header
@@ -73,7 +73,7 @@ def export_table_to_txt_booking():
         max_len = len(headers[i])
         for row in rows:
             max_len = max(max_len, len(str(row[i])))
-        col_widths.append(max_len + 2)  # padding
+        col_widths.append(max_len + 2)
 
     # ---------- WRITE FORMATTED TEXT ----------
     txt_file = "table_data_booking.txt"

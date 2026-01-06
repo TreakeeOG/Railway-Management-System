@@ -8,7 +8,7 @@ class App(tk.Tk):
 
         self.title("Railway management system")
         self.geometry("390x844")
-
+        self.resizable(False,False)
         container = tk.Frame(self)
         container.pack(fill="both", expand=True)
 
@@ -37,7 +37,7 @@ class WelcomePage(tk.Frame):
         self.hero_img = tk.PhotoImage(file="assets/Welcome/Hero.png")
 
         self.canvas.create_image(195, 422, image=self.bg_image)
-        self.canvas.create_image(195, 535, image=self.hero_img)
+        self.canvas.create_image(205, 535, image=self.hero_img)
         
         # Register button (image only)
         reg_id = self.canvas.create_image(140, 730, image=self.register_img)
@@ -219,7 +219,7 @@ class DashboardPage(tk.Frame):
 
     def btn3(self, event=None):
         print("Print passengers")
-        export_table_to_txt_train()
+        export_table_to_txt_passenger()
 
 
 if __name__ == "__main__":
