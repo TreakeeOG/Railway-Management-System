@@ -13,25 +13,30 @@ def cancel_ticket():
 
     try:
         # Check if the ticket exists in the booking table
-        cur.execute("SELECT * FROM Booking WHERE PNR = ?", (pnr,))
+        cur.execute("SELECT * FROM Booking WHERE PNR_No = %s", (pnr,))
         ticket = cur.fetchone()
 
         if not ticket:
             print("No ticket found with the given PNR.")
             return
 
-        # Calculate refund amount (example logic, adjust as needed)
-        refund_amount = ticket[5] * 0.8  # Assuming ticket[3] is the fare
+        refund_amount = ticket[5] * 0.8 
+        print(refund_amount)
+        
+        cancellation_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print(cancellation_date)
+
+        # Debugging: Print values before inserting into Cancellation table
+        print(f"PNR: {pnr}, Cancellation Date: {cancellation_date}, Refund Amount: {refund_amount}")
 
         # Add cancellation details to the Cancellation table
-        cancellation_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         cur.execute(
-            "INSERT INTO Cancellation (PNR, CancellationDate, RefundAmount) VALUES (?, ?, ?)",
+            "INSERT INTO Cancellation (PNR_No, Cancellation_Date, Refund_Amount) VALUES (%s, %s, %s)",
             (pnr, cancellation_date, refund_amount),
         )
 
         # Delete the ticket from the Booking table
-        cur.execute("DELETE FROM Booking WHERE PNR = ?", (pnr,))
+        cur.execute("DELETE FROM Booking WHERE PNR_No = %s", (pnr,))
 
         # Commit the changes
         con.commit()
@@ -43,6 +48,7 @@ def cancel_ticket():
 
     finally:
         con.close()
+cancel_ticket()
 
 def view_cancellaition():
     root = tk.Tk()
@@ -66,3 +72,4 @@ def view_cancellaition():
 
     input("\nPress Enter to continue...")
     con.close()
+view_cancellaition()

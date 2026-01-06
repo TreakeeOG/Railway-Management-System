@@ -144,7 +144,7 @@ back              - back
         os.system("cls")
 
     elif command in ("exit", "quit"):
-        print("Exiting CLI 👋")
+        print("Exiting CLI")
         break
 
     else:

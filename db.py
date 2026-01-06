@@ -5,7 +5,7 @@ def create_RMS():
     con = sl.connect(
         host="localhost",
         user="root",
-        passwd="1234"   
+        passwd="12345"   
     )
     cur = con.cursor()
     cur.execute("CREATE DATABASE IF NOT EXISTS RMS")
@@ -16,6 +16,6 @@ def get_connection():
     return sl.connect(
         host="localhost",
         user="root",
-        passwd="1234",
+        passwd="12345",
         database="RMS"
     )
