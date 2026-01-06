@@ -1,0 +1,2 @@
+PNR_No  TrainID  PassengerID  Booking_Date  Departure_Date  Fare  
+------------------------------------------------------------------

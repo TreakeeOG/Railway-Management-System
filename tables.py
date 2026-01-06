@@ -1,8 +1,10 @@
-from db import get_connection
+from db import get_connection, create_RMS
 
 def create_user_table():
+    create_RMS()
     con = get_connection()
     cur = con.cursor()
+    cur.execute("USE RMS")
     cur.execute(
         """
         CREATE TABLE IF NOT EXISTS user (
@@ -15,6 +17,7 @@ def create_user_table():
     con.close()
 
 def create_train_table():
+    create_RMS()
     con = get_connection()
     cur = con.cursor()
     cur.execute(
@@ -32,11 +35,12 @@ def create_train_table():
     con.close()
 
 def create_passenger_table():
+    create_RMS()
     con = get_connection()
     cur = con.cursor()
     cur.execute(
         """
-        CREATE TABLE Passenger (
+        CREATE TABLE IF NOT EXISTS Passenger (
             PassengerID INT PRIMARY KEY,
             Passenger_Name VARCHAR(30) NOT NULL,
             Age INT CHECK (Age > 0),
@@ -49,11 +53,12 @@ def create_passenger_table():
     con.close()
 
 def create_booking_table():
+    create_RMS()
     con = get_connection()
     cur = con.cursor()
     cur.execute(
         """
-        CREATE TABLE Booking (
+        CREATE TABLE IF NOT EXISTS Booking (
             PNR_No INT PRIMARY KEY,
             TrainID INT,
             PassengerID INT,
@@ -69,11 +74,12 @@ def create_booking_table():
     con.close()
 
 def create_cancellation_table():
+    create_RMS()
     con = get_connection()
     cur = con.cursor()
     cur.execute(
         """
-        CREATE TABLE Cancellation (
+        CREATE TABLE IF NOT EXISTS Cancellation (
             PNR_No INT,
             Cancellation_Date DATE NOT NULL,
             Refund_Amount INT CHECK (Refund_Amount >= 0),
@@ -86,8 +92,10 @@ def create_cancellation_table():
 
 def create_all_tables():
 
+    create_RMS()
     create_user_table()
     create_train_table()
     create_passenger_table()
     create_booking_table()
     create_cancellation_table()
+

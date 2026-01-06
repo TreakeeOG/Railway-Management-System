@@ -2,6 +2,8 @@ import tkinter as tk
 from auth.register import register_user
 from auth.login import login_user
 from printer import *
+from db import create_RMS
+from tables import create_all_tables
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -27,6 +29,9 @@ class App(tk.Tk):
 class WelcomePage(tk.Frame):
     def __init__(self, parent, controller):
         super().__init__(parent)
+
+        create_all_tables()
+
 
         self.canvas = tk.Canvas(self, width=390, height=844)
         self.canvas.pack(fill="both", expand=True)
