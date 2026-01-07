@@ -26,8 +26,7 @@ def create_train_table():
             TrainID INT PRIMARY KEY,
             Train_Name VARCHAR(30) NOT NULL,
             Source_Station VARCHAR(30) NOT NULL,
-            Destination VARCHAR(30) NOT NULL,
-            Day DATE NOT NULL
+            Destination VARCHAR(30) NOT NULL
         )
         """
     )
@@ -98,4 +97,5 @@ def create_all_tables():
     create_passenger_table()
     create_booking_table()
     create_cancellation_table()
+
 
