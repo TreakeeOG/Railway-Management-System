@@ -11,15 +11,15 @@ print("        ADMIN CLI")
 print("=" * 40)
 
 
-# SIMPLE AUTH (OPTIONAL BUT FIRE)
+# SIMPLE AUTHENTICATION
 
 while True:
     password = getpass.getpass("Enter admin password: ")
     if password == "admin123":
-        print("Access granted ✅")
+        print("Access granted...")
         break
     else:
-        print("Access denied ❌")
+        print("Access denied...")
 
 
 print("Type 'help' to see commands\n")
@@ -36,12 +36,12 @@ while True:
         print("""
 Available Commands:
 -------------------
-Trains        - 1 or trains
-Passengers    - 2 or passengers
-Cancellation  - 3 or cancellation
-Bookings      - 4 or bookings
-Exit          - exit or quit
-Clear Screen  - clear or cls
+Trains              - 1 or trains
+Passengers          - 2 or passengers
+Cancellation        - 3 or cancellation
+Bookings            - 4 or bookings
+Exit                - exit or quit
+Clear Screen        - clear or cls
 """)
 
     elif command in ("1", "trains", "train"):
@@ -50,11 +50,11 @@ Clear Screen  - clear or cls
         print("""
 Available Commands:
 -------------------
-Add trains       - 1 or add
-Update trains    - 2 or update
-Delete trains    - 3 or delete
-View trains      - 4 or view
-back             - back
+Add trains          - 1 or add
+Update trains       - 2 or update
+Delete trains       - 3 or delete
+View trains         - 4 or view
+back                - back
 """)
         choice = input("RMS Trains> ").strip().lower()
         if choice in ("1", "add", "add trains"):
@@ -80,9 +80,9 @@ back             - back
         print("""
 Available Commands:
 -------------------
-Add passengers    - 1 or add
-View passengers   - 2 or view
-back              - back
+Add passengers      - 1 or add
+View passengers     - 2 or view
+back                - back
 """)
         choice = input("RMS Passengers> ").strip().lower()
         if choice in ("1", "add", "add passengers"):
@@ -102,9 +102,9 @@ back              - back
         print("""
 Available Commands:
 -------------------
-View cancellations   - 1 or view
-cancel ticket        - 2 or cancel
-back                 - back
+View cancellations  - 1 or view
+cancel ticket       - 2 or cancel
+back                - back
 """)
         choice = input("RMS Cancellation> ").strip().lower()
         if choice in ("1", "view", "view cancellations"):
@@ -123,9 +123,9 @@ back                 - back
         print("""
 Available Commands:
 -------------------
-Book ticket       - 1 or book
-View bookings     - 2 or view
-back              - back
+Book ticket         - 1 or book
+View bookings       - 2 or view
+back                - back
 """)
         choice = input("RMS Bookings> ").strip().lower()
         if choice in ("1", "book", "book ticket"):

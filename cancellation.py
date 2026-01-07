@@ -48,7 +48,7 @@ def cancel_ticket():
 
     finally:
         con.close()
-cancel_ticket()
+
 
 def view_cancellaition():
     root = tk.Tk()
@@ -72,4 +72,3 @@ def view_cancellaition():
 
     input("\nPress Enter to continue...")
     con.close()
-view_cancellaition()
