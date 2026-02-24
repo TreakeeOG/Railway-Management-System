@@ -10,7 +10,7 @@ The **Railway Management System** is a fully functional desktop application buil
 
 This project is designed as a **Class XII CBSE Informatics Practices Practical Project**, but built with **professional-grade software structure**, clean UI, and modular code — far beyond typical school-level projects.
 
-
+Read full documentation [here](https://github.com/TreakeeOG/Railway-Management-System/blob/main/RMS%20Documentation%20w.pdf) (trust me it'll not dissapoint)
 
 
 ## ✨ Features
@@ -65,6 +65,7 @@ This project is designed as a **Class XII CBSE Informatics Practices Practical P
 - [@TreakeeOG](https://www.github.com/TreakeeOG)
 
 - [@BOxmAN0911](https://www.github.com/BOxmAN0911)
+
 
 
 
